@@ -103,7 +103,7 @@ var WaterCoolingChart = (function () {
         init: function (pdata) {
             chart = Highcharts.chart('myChart', {
                 chart: {
-                    type: 'line',
+                    type: 'spline',
                     width: 400,
                     height:290
 

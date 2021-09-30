@@ -134,31 +134,26 @@ $('.closeProcd').on('mouseout', function () {
 
 $('.showObj').on('mouseover', function () {
   $(this).attr('src', 'assets/images/showObj.gif').css('cursor', 'pointer');
+  $('.contentContainer, .tableContainer, .mainstand, .graphTempVsTime, .threshold, .timerDiv').css('opacity', '0.3');
   if (procedCount == 1) {
-    $('.mettalBall').css('opacity', '1');
-    $('.ballText, .ballDiameterDiv, .timerDiv, .burnerDiv, .standDiv, .dragStandDiv, .mettalBallPlaceholder, .mettalBallText, .flameDiv, .resetDiv').css('opacity', '0.3');
+    
   }
-  if (procedCount == 2) {
-    $('.burnerDiv, .flameDiv').css('opacity', '1');
-    $('.ballText, .ballDiameterDiv, .timerDiv, .standDiv, .dragStandDiv, .mettalBallText, .mettalBallPlaceholder, .mettalBall, .resetDiv').css('opacity', '0.3');
+  if (procedCount == 2 || procedCount == 4) {
+    $(".standContainer .opacburner").show().css('opacity', '1');
   }
-  if (procedCount == 3 || procedCount == 5) {
-    $('.dragStandDiv').css('opacity', '1');
-    $('.ballText, .ballDiameterDiv, .timerDiv, .standDiv, .burnerDiv, .mettalBallText,.mettalBallPlaceholder, .mettalBall, .flameDiv, .resetDiv').css('opacity', '0.3');
-  }
-  if (procedCount == 4) {
-    $('.burnerDiv, .timerDiv, .flameDiv').css('opacity', '1');
-    $('.ballText, .ballDiameterDiv, .standDiv, .dragStandDiv, .mettalBallText,.mettalBallPlaceholder, .mettalBall, .resetDiv').css('opacity', '0.3');
+  if (procedCount == 3) {
+    $(".standContainer .opactermometer").show().css('opacity', '1');
   }
   if (procedCount == 6) {
-    $('.resetDiv').css('opacity', '1');
-    $('.ballText, .ballDiameterDiv, .timerDiv, .burnerDiv, .standDiv, .dragStandDiv,.mettalBallPlaceholder, .mettalBall, .mettalBallText, .flameDiv').css('opacity', '0.3');
+    $(".standContainer .opactermometer").show().css('opacity', '1');
   }
 });
 
 $('.showObj').on('mouseout', function () {
   $(this).attr('src', 'assets/images/showObjM.gif');
-  $('.ballText, .ballDiameterDiv, .timerDiv, .burnerDiv, .standDiv, .dragStandDiv, .mettalBall,.mettalBallPlaceholder, .mettalBallText, .flameDiv, .resetDiv').css('opacity', '1');
+  $('.contentContainer, .tableContainer,.mainstand, .graphTempVsTime, .threshold, .timerDiv').css('opacity', '1');
+  $(".standContainer .opacburner").hide().css('opacity', '1');
+  $(".standContainer .opactermometer").hide().css('opacity', '1');
 });
 
 var timeSF2 = 20;
