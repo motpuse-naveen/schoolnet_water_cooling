@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Water Cooling - Temperature versus Time</title>
+   <link rel="stylesheet" href="assets/jslib/normalize_5.0.css">
+   <link rel="stylesheet" href="assets/jslib/jquery_ui_1.12.1/jquery_ui_1.12.1.min.css">
+   <link rel="stylesheet" href="assets/css/main.css">
+   <script src="assets/json/main.json"></script>
+   <script src="assets/jslib/jquery_3.1.1/jquery_3.1.1.min.js"></script>
+   <script src="assets/jslib/jquery_ui_1.12.1/jquery_ui_1.12.1.js"></script>
+   <script src="assets/jslib/jquery-ui-touch/jquery.ui.touch.js"></script>
+   <script src="assets/jslib/reSize_1.0/resize.js"></script>
+   <script src="assets/jslib/highchart/highcharts.js"></script>
+
+</head>
+
+<body>
+   <div id="bk6ch15ss2" class='conatiner' data-attr='continues' tabindex="0">
+      <script type="text/javascript">
+         (function ($) {
+            game_resize_function("#bk6ch15ss2");
+         })(jQuery);
+      </script>
+      <div id="topmenubar">
+         <div id="logo">
+            <img id="logoImg" src="assets/images/1349.png">
+         </div>
+         <div id="closeBtn">
+            <!-- <div id="closeBtnImg"></div>
+            <p id="closeBtnText">Close</p> -->
+         </div>
+
+      </div>
+      <div id="topmenubar2">
+         <div id="contentTittle">
+            <p class="titleName">Water Cooling - Temperature versus Time</p>
+         </div>
+      </div>
+
+
+      <!-- slides -->
+      <div class="slideconatiner">
+         <div class='Slides'>
+            <div id="slide1Content">
+               <div class="contentContainer">
+                  <div class="contentDiv"></div>
+                  <div class="resetDiv">
+                     <span class="resetText">RESET</span>
+                  </div>
+               </div>
+               <div class="tableContainer">
+                  <table id="tableCoolingTemp">
+                     <thead>
+                        <tr>
+                           <th>Time <br>(min)</th>
+                           <th>Temp <br> &deg;C</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div class="standContainer">
+                  <div class="water"></div>
+                  <div class="boilingwater"><img src="assets/images/crops/bubble_ani.gif"></div>
+                  <div class="termameterredbarwrapper">
+                     <div class="termameterredbar"></div>
+                  </div>
+                  <div class="graphic-normal"><img src="assets/images/crops/graphic_normal.png"></div>
+                  <div class="graphic-active"><img src="assets/images/crops/graphic_active.png"></div>
+                  <div class="burnerKnob off"></div>
+                  <div class="txtTemp">30</div>
+               </div>
+               <div class="graphTempVsTime">
+                  <div id="myChart" width="375" height="250"></div>
+               </div>
+               <div class="threshold">
+                  <p class="thresholdText">
+                     The water in the beaker has been heated to 100 &deg;C
+                  </p>
+                  <p class="thresholdText">Click the button below to observe the rate of cooling of water. Record the
+                     decrease in temperature at a regular interval and plot the graph of Temperature versus Time.</p>
+                  <div class="gotonextstep">
+                     <button class="gotonextstepbtn">Go to Next Stage</button>
+                  </div>
+               </div>
+               <div class="timerDiv">
+                  <div class="clockText">00:00</div>
+               </div>
+
+               <div class="workSheetContainer">
+                  <p class="worksheetTitle">Use the worksheet provided to you, to enter readings of the experiment.</p>
+                  <div class="workSheetDiv" onclick="OpenWord()">
+                     <a id="MyLink" style="display:none"></a>
+                  </div>
+                  <input id="file-input" type="file" name="name" style="display: none;" />
+                  <div class="workSheetContent">
+                     <div class="workSheetText">
+                        <p><b>Aim:</b> To measure the temperature of hot water as it cools and to plot a Temperature
+                           versus Time plot.</p>
+                        <p><b>Rate of Cooling</b></p>
+                        <p>When hot water cools, the rate of decrease in temperature follows Newton's Law of Cooling.
+                           According to this law, the rate of change of the temperature of a body is proportional to the
+                           difference between its own temperature and the ambient temperature, i.e. the temperature of
+                           its surroundings. This means that when the temperature of water is quite high compared to the
+                           room temperature, the temperature drops quite rapidly. However, as the water keeps cooling
+                           off the difference between its temperature and the room temperature steadily reduces and the
+                           rate of decrease of temperature also starts slowing down. This behaviour is demonstrated when
+                           you plot the graph of Temperature versus Time for cooling down of hot water from a high
+                           temperature to the room temperature.</p>
+                        <p><b>Apparatus</b></p>
+                        <p>Beaker filled with Water</p>
+                        <p>Bunsen Burner with tripod and wire gauze</p>
+                        <p>Thermometer</p>
+                        <p><b>Procedure:</b></p>
+                        <p>Place the beaker partially filled with water on a tripod stand with a Bunsen burner below it.
+                        </p>
+                        <p>Start heating the water with the Bunsen burner.</p>
+                        <p>Allow the temperature of water to increase till 100 deg.</p>
+                        <p>Stop heating by switching off the burner.</p>
+                        <p>Start the timer and measure the temperature for every 1 deg drop in the temperature.</p>
+                        <p>Measure the decrease in temperature for around 30 minutes. </p>
+                        <p>Plot a graph of Temperature versus Time </p>
+                     </div>
+                  </div>
+                  <p class="copyRight">© 2019, Schoolnet India Limited</p>
+               </div>
+               <div class="procedureDiv">
+                  <img class="procdClick" src="assets/images/procdClick.png">
+                  <img class="procdAnim" src="assets/images/procedure.gif" />
+                  <div class="mainProcdiv">
+                     <span class="procdNum">1)</span>
+                     <div class="prevProcd"></div>
+                     <div class="nextProcd"></div>
+                     <img class="showObj" src="assets/images/showObjM.gif" />
+                     <span class="showObjTxt">Show Object</span>
+                     <img class="closeProcd closeProcdBefore" src="assets/images/closeUp.png" />
+                     <span class="closeProcdTxt">CLOSE</span>
+                     <div class="procedSteps procedSteps1">
+                        <p>Specify a value between 20 and 240 as the time-scale between the program time and the actual
+                           experiment time.</p>
+                     </div>
+                     <div class="procedSteps procedSteps2">
+                        <p>Heat the water using the Bunsen burner. Click the burner to switch it on.</p>
+                     </div>
+                     <div class="procedSteps procedSteps3">
+                        <br>Observe the thermometer to know the increase in temperature of water.</p>
+                     </div>
+                     <div class="procedSteps procedSteps4">
+                        <p>You can switch off the burner any time to stop heating or wait until the temperature reaches
+                           100 deg.</p>
+                     </div>
+                     <div class="procedSteps procedSteps5">
+                        <p>On reaching temperature of 100 deg or switching off the burner prior to that, you will be
+                           prompted to go to the NEXT stage.</p>
+                     </div>
+                     <div class="procedSteps procedSteps6">
+                        <p>In Stage 2 of the experiment, you can observe the rate of cooling of water over a period of
+                           time.</p>
+                     </div>
+                     <div class="procedSteps procedSteps7">
+                        <p>Click RESET to repeat the experiment.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="downmenubar">
+            <!-- <p class="copyRight">© 2019, Schoolnet India Limited</p> -->
+         </div>
+      </div>
+      <script src="assets/js/TimeFactorObject.js"></script>
+      <script src="assets/js/main.js"></script>
+</body>
+
+</html>

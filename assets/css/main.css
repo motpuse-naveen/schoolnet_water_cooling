@@ -1,0 +1,780 @@
+/*global css starts*/
+
+* {
+  outline: none;
+}
+
+@font-face {
+  font-family: 'Trebuchet';
+  src: local('fonts/11_Trebuchet MS.ttf'), url('fonts/11_Trebuchet MS.ttf');
+}
+
+@font-face {
+  font-family: 'ArialBold';
+  src: local('fonts/6_Arial.ttf'), url('fonts/6_Arial.ttf');
+}
+
+@font-face {
+  font-family: 'TrebuchetBold';
+  src: local('fonts/9_Trebuchet MS.ttf'), url('fonts/9_Trebuchet MS.ttf');
+}
+
+html, body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #d0cccc;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: auto;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+/*global css ends*/
+
+#bk6ch15ss2 {
+  position: absolute;
+  width: 996px;
+  height: 680px;
+  /* background: url('../images/89.png'); */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background: white;
+}
+
+#topmenubar {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  background: url(../images/1338.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+#logo {
+  position: absolute;
+  width: 100px;
+  height: 24px;
+  top: 3px;
+  right: 39px;
+}
+
+#logoImg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#closeBtn {
+  position: absolute;
+  width: 34px;
+  height: 39px;
+  top: 2px;
+  right: 5px;
+  cursor: pointer;
+  background: url(../images/10.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+/* #closeBtnImg{
+  position: absolute;
+  width: 100%;
+  height: 27px;
+  top: 0px;
+  right: 0px;
+  background: url(../images/10.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#closeBtnText{
+  position: absolute;
+  bottom: -10px;
+  left: 3px;
+  font-family: Arial;
+  font-size: 11px;
+  font-weight: 600;
+  color: #ccc;
+} */
+
+#closeBtn:hover {
+  position: absolute;
+  width: 34px;
+  height: 39px;
+  top: 2px;
+  right: 5px;
+  background: url(../images/11.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+#topmenubar2 {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  /* background: url(../images/3.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%; */
+  left: 0;
+  top: 40px;
+  z-index: 100;
+  /* box-shadow: 0 8px 6px -7px #939191; */
+}
+
+#contentTittle {
+  position: absolute;
+  width: 65%;
+  height: 100%;
+}
+
+.titleName {
+  position: absolute;
+  top: -12px;
+  left: 7px;
+  font-size: 18px;
+  font-family: Arial;
+  letter-spacing: 0.7px;
+  color: #000033;
+  font-weight: bold;
+  
+}
+
+#downmenubar {
+  position: absolute;
+  width: 100%;
+  height: 31px;
+  bottom: 0px;
+  left: 0;
+  z-index: 200;
+  background: #ccc;
+}
+
+.copyRight {
+  position: absolute;
+  bottom: 9px;
+  font-family: Arial;
+  font-size: 12px;
+  right: 6px;
+}
+
+.Slides {
+  position: absolute;
+  width: 996px;
+  height: 650px;
+  display: none;
+}
+
+.activeslide {
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  margin: 2px;
+  background: url('../images/dot_hover.png');
+  background-size: 100% 100%;
+}
+
+#slide1Content {
+  width: 100%;
+  height: 86%;
+  position: absolute;
+  top: 70px;
+  left: 0px;
+}
+
+.mettalBallPlaceholder {
+  position: absolute;
+  width: 51px;
+  height: 45px;
+  top: 196px;
+  left: 7px;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.contentContainer {
+  position: absolute;
+    width: 71%;
+    height: 110px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.contentDiv {
+  position: absolute;
+    width: 100%;
+    height: 119px;
+    top: 0px;
+    left: 0px;
+    border-bottom-left-radius: 28px;
+    background: url(../images/content.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.timerDiv {
+  position: absolute;
+  width: 120px;
+  height: 69px;
+  bottom: 111px;
+  left: 495px;
+  background: url(../images/timer.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: none;
+}
+
+.clockText {
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  font-size: 29px;
+  /* word-spacing: 14px; */
+  font-family: 'Digital';
+  font-weight: bold;
+  letter-spacing: 0.7px;
+  color: #FFFF99;
+  left: 13px;
+  width: 94px;
+}
+
+.ballText {
+  position: absolute;
+  top: 23px;
+  left: 22px;
+  font-size: 13px;
+  font-family: 'Trebuchet';
+  /* letter-spacing: 0.7px; */
+  word-spacing: 5px;
+  color: #333333;
+}
+
+.ballDiameterDiv {
+  position: absolute;
+  width: 116px;
+  height: 47px;
+  top: 18px;
+  left: 156px;
+  background: url(../images/ballDiameter.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.ringText {
+  top: 83px;
+}
+
+.ringDiameterDiv {
+  top: 78px;
+}
+
+.ballDiameterText {
+  position: absolute;
+  top: 2px;
+  left: 22px;
+  font-size: 16px;
+  font-family: 'Trebuchet';
+  /* font-weight: bold; */
+  color: #333333;
+}
+
+.ringDiameterText {
+  position: absolute;
+  top: 2px;
+  left: 22px;
+  font-size: 16px;
+  font-family: 'Trebuchet';
+  /* font-weight: bold; */
+  color: #333333;
+}
+
+.mettalBall {
+  position: absolute;
+  width: 51px;
+  height: 45px;
+  top: 38px;
+  cursor: pointer;
+}
+
+.copperDiv {
+  left: 357px;
+  background: url(../images/copper.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.ironDiv {
+  left: 445px;
+  background: url(../images/iron.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.brassDiv {
+  left: 530px;
+  background: url(../images/brass.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.bronzeDiv {
+  left: 625px;
+  background: url(../images/bronze.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.mettalBallText {
+  position: absolute;
+  top: 80px;
+  font-size: 13px;
+  font-family: 'Trebuchet';
+  /* font-weight: bold; */
+  color: #333333;
+}
+
+.copperText {
+  left: 360px;
+}
+
+.ironText {
+  left: 459px;
+}
+
+.brassText {
+  left: 540px;
+}
+
+.bronzeText {
+  left: 630px;
+}
+
+.workSheetContainer {
+  position: absolute;
+  width: 270px;
+  height: 109%;
+  top: -31px;
+  right: 0px;
+  background-color: #F0F0F0;
+  z-index: 999;
+}
+
+.worksheetTitle {
+  position: absolute;
+  top: 0px;
+  left: 12px;
+  font-size: 13px;
+  font-family: Arial;
+  font-weight: bold;
+  color: #000000;
+}
+
+.workSheetDiv {
+  position: absolute;
+  width: 69px;
+  height: 59px;
+  top: 52px;
+  left: 101px;
+  background: url(../images/worksheet.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.workSheetDiv:hover {
+  position: absolute;
+  width: 69px;
+  height: 59px;
+  top: 52px;
+  left: 101px;
+  background: url(../images/worksheethover.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.workSheetContent {
+  position: absolute;
+  width: 258px;
+  height: 430px;
+  top: 122px;
+  left: 5px;
+  border: 1px solid black;
+  overflow-y: scroll;
+}
+
+.workSheetText {
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  font-size: 13px;
+  font-family: Arial;
+  /* font-weight: bold; */
+  color: #000033;
+  padding-right: 15px;
+}
+
+b {
+  color: #000033;
+  font-weight: 800;
+}
+
+.resetDiv {
+  position: absolute;
+  width: 77px;
+  height: 29px;
+  top: 20px;
+  left: 350px;
+  background: url(../images/reset2.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+  display: none;
+}
+
+.resetText {
+  position: absolute;
+  font-family: Arial;
+  top: 9px;
+  left: 19px;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  font-weight: bold;
+}
+
+/* main css starts*/
+
+.threshold {
+  position: absolute;
+  width: 290px;
+  top: 50px;
+  right: 280px;
+  background-color: #f0f0f0;
+  border: 1px solid #A0B4B0;
+  border-radius: 6px;
+  padding: 0px 20px;
+  display: none;
+}
+
+.thresholdText {
+  font-size: 14px;
+  font-family: Arial;
+  font-weight: bold;
+  color: #56565a;
+  word-spacing: 4px;
+  letter-spacing: 0.3px;
+  line-height: 20px;
+}
+
+.gotonextstep {
+  text-align: center;
+  padding: 10px 0px 20px 0px;
+}
+
+.gotonextstepbtn {
+  background: url(../images/crops/goto_nxt_btn.png);
+  background-repeat: no-repeat;
+  border: 0px;
+  width: 172px;
+  height: 42px;
+  font-size: 14px;
+  letter-spacing: 0.8px;
+  font-weight: bold;
+  font-family: Arial;
+  cursor: pointer;
+}
+
+.procedureDiv {
+  position: absolute;
+  width: 242px;
+  height: 164.5px;
+  top: -20px;
+  right: 281px;
+}
+
+.procdAnim {
+  width: 242px;
+  height: 164.5px;
+  right: 0;
+  display: none;
+}
+
+.procdNum {
+  position: absolute;
+  width: 19px;
+  height: 22px;
+  top: 31px;
+  left: 5px;
+  /* letter-spacing: 1.3px; */
+  font-weight: bold;
+  font-family: Arial;
+}
+
+.procedSteps {
+  position: absolute;
+  width: 88%;
+  height: auto;
+  left: 23px;
+  top: 19px;
+  /* line-height: 1.3; */
+  font-family: 'Trebuchet MS';
+  font-size: 12.2px;
+  text-align: left;
+  display: none;
+}
+
+.procdClick {
+  position: absolute;
+  right: 0;
+}
+
+.mainProcdiv {
+  display: none;
+}
+
+.prevProcd {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  bottom: 4px;
+  left: 4px;
+  opacity: 0.5;
+  pointer-events: none;
+  background: url(../images/procPrev.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.nextProcd {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  bottom: 4px;
+  right: 4px;
+  background: url(../images/procdnext.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.showObj {
+  position: absolute;
+  width: 100px;
+  height: 21px;
+  bottom: 32px;
+  left: 135px;
+}
+
+.showObjTxt {
+  position: absolute;
+  font-size: 10px;
+  bottom: 35px;
+  right: 12px;
+  font-weight: bold;
+  font-family: 'Trebuchet';
+  color: #333333;
+  pointer-events: none;
+}
+
+.closeProcdAfter {
+  position: absolute;
+  width: 22px;
+  /* height: 31px; */
+  bottom: 8px;
+  left: 46%;
+}
+
+.closeProcdBefore {
+  position: absolute;
+  width: 16px;
+  height: 9px;
+  bottom: 9px;
+  left: 47%;
+}
+
+.closeProcdTxt {
+  position: absolute;
+  bottom: 3px;
+  left: 44%;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: 'Trebuchet';
+  color: #333333;
+  pointer-events: none;
+  display: none;
+}
+
+.procedSteps1 {
+  /* word-spacing: 2px; */
+  display: block;
+}
+
+.procedSteps2 {
+  /* word-spacing: 3.4px; */
+}
+
+.procedSteps3 {
+  /* word-spacing: 1.4px; */
+  /* top: 11px; */
+}
+
+.procedSteps4 {
+  /* word-spacing: 2.1px; */
+}
+
+.procedSteps5, .procedSteps6 {
+  /* word-spacing: 2px; */
+}
+
+.hideDivs {
+  opacity: 0.3;
+}
+
+.showDivs {
+  opacity: 1;
+}
+
+.show {
+  opacity: 1 !important;
+  display: block !important;
+}
+
+.tableContainer {
+  position: absolute;
+    left: 15px;
+    top: 5px;
+  display: none;
+}
+
+.tableContainer table {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+}
+
+.tableContainer table th, .tableContainer table td {
+  text-align: center;
+  border: 1px solid #000;
+  padding: 4px 15px;
+}
+
+.tableContainer table th:nth-child(1) {
+  background-color: #ffeda6;
+}
+
+.tableContainer table th:nth-child(2) {
+  background-color: #cee685;
+}
+
+.tableContainer table tr td:nth-child(1) {
+  background-color: #fef7df;
+}
+
+.tableContainer table tr td:nth-child(2) {
+  background-color: #ebf4cf;
+}
+
+.standContainer {
+  position: absolute;
+    width: 220px;
+    height: 438px;
+    bottom: 103px;
+    left: 170px;
+}
+
+.graphic-normal, .graphic-active {
+  position: absolute;
+  bottom: 0;
+}
+
+.graphic-active {
+  display: none;
+}
+
+.graphic-normal img, .graphic-active img {
+  width: 220px;
+}
+
+.standContainer .water {
+  position: absolute;
+  bottom: 136px;
+  left: 22px;
+  height: 96px;
+  width: 133px;
+}
+
+.standContainer .water {
+  background-color: #d0dae0;
+}
+
+.standContainer .boilingwater {
+  position: absolute;
+  bottom: 136px;
+  left: 22px;
+  height: 115px;
+  width: 133px;
+  display: none;
+}
+
+.standContainer .boilingwater img {
+  width: 133px;
+  height: 115px;
+}
+
+.termameterredbarwrapper {
+  position: absolute;
+  bottom: 168px;
+  left: 114px;
+  width: 2px;
+  height: 213px;
+  z-index: 1;
+}
+
+.termameterredbar {
+  position: absolute;
+  background-color: #ff2e2e;
+  opacity: 0.6;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 30%;
+}
+
+.burnerKnob {
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  left: 46px;
+  bottom: 28px;
+  /* background-color: red; */
+  cursor: pointer;
+}
+
+.graphTempVsTime {
+  position: absolute;
+  left: 350px;
+  top: 70px;
+  display: none;
+}
+
+.txtTemp {
+  position: absolute;
+  top: 10px;
+  left: 150px;
+  width: 47px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
