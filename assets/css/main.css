@@ -227,7 +227,7 @@ html, body {
   width: 120px;
   height: 69px;
   bottom: 111px;
-  left: 495px;
+  left: 502px;
   background: url(../images/timer.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -690,7 +690,7 @@ b {
     width: 220px;
     height: 438px;
     bottom: 103px;
-    left: 170px;
+    left: 160px;
 }
 
 .graphic-normal, .graphic-active {
@@ -763,7 +763,7 @@ b {
 
 .graphTempVsTime {
   position: absolute;
-  left: 350px;
+  left: 330px;
   top: 70px;
   display: none;
 }
@@ -777,4 +777,39 @@ b {
   font-size: 14px;
   font-weight: bold;
   text-align: center;
+}
+
+.gradientyAxis {
+  position: absolute;
+  width: 60px;
+  top: 0;
+  left: 8px;
+  height: 238px;
+  border-right: 1px solid #000;
+  background-image: linear-gradient(to left, #cee685, #d5ea98, #ddedaa, #e4f1bd, #ebf4cf);
+}
+.gradientxAxis {
+  position: absolute;
+  height: 44px;
+  bottom: 9px;
+  left: 68px;
+  width: 323px;
+  border-top: 1px solid #000;
+  background-image: linear-gradient(to left, #ffeda6, #fff0b4, #fff2c3, #fff5d1, #fef7df);
+}
+
+.highcharts-background{
+  fill: transparent !important;
+}
+
+.gradientBG{
+  background-image: url(assets/images/crops/graph_base.svg);
+    background-repeat: no-repeat;
+}
+.myChartBG{
+  position: absolute;
+  height: 44px;
+  bottom: 9px;
+  background-image: url(assets/images/crops/graph_base.svg);
+    background-repeat: no-repeat;
 }

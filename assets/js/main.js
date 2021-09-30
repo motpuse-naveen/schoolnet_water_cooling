@@ -268,6 +268,7 @@ function bur_mc_off() {
 
   clearInterval(intervalID);
   $(".threshold").show();
+  $(".threshold .heatedToTempVal").text(Temp2);
   $(".burnerKnob").hide();
   $(".boilingwater").hide();
 }
@@ -295,7 +296,7 @@ var exptTime2 = 0;
 function StartCooling() {
   var coolingConstant = 0.003;
   ClsCalcCoolingObject.initCoolingObj(Temp1, Temp2, coolingConstant);
-  debugger;
+  
   WaterCoolingChart.init([{"x": 0, "y":100}]);
   intervalID3 = setInterval(ObserveCooling, 1000);
 }
@@ -310,7 +311,7 @@ function ObserveCooling() {
   if ((minValue % 2) == 0) {
     $("#tableCoolingTemp tbody tr:nth-child(" + kp + ") td:nth-child(1)").text(minValue);
     $("#tableCoolingTemp tbody tr:nth-child(" + kp + ") td:nth-child(2)").text(currentTemp.toFixed(1));
-    WaterCoolingChart.update(currentTemp.toFixed(1))
+    WaterCoolingChart.update({x:minValue,y:Number(currentTemp.toFixed(1))})
     kp++;
   }
   updateTemperature(currentTemp);

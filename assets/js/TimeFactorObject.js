@@ -101,48 +101,58 @@ var WaterCoolingChart = (function () {
     var chart = null;
     return {
         init: function (pdata) {
-            ctx = document.getElementById('myChart').getContext('2d');
-            chart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],
-                    datasets: [
-                        {
-                            data: []
-                        }
-                    ]
+            chart = Highcharts.chart('myChart', {
+                chart: {
+                    type: 'line',
+                    width: 400,
+                    height:290
+
                 },
-                options: {
-                    scales: {
-                        x: {
-                            display: true,
-                            title: {
-                                display: true,
-                                text: 'Time (min)'
-                            }
-                        },
-                        y: {
-                            display: true,
-                            suggestedMin: 0,
-                            suggestedMax: 100,
-                            title: {
-                                display: true,
-                                text: 'Temperature (°C)'
-                            },
-                            ticks: {
-                                stepSize: 10
-                            }
-                        }
+                plotOptions: {
+                    series: {
+                        enableMouseTracking: false
                     }
-                }
+                },
+                xAxis: {
+                    title: {
+                        text: 'Time (min)'
+                    },
+                    min:0,
+                    max:30,
+                    tickInterval:2,
+                    gridLineWidth: 1
+                },
+                title: false,
+                subtitle:false,
+                yAxis: {
+                    title: {
+                        text: 'Temperature (°C)'
+                    },
+                    min:0,
+                    max:100,
+                    tickInterval:10,
+                    gridLineWidth: 1
+                },
+                legend: {
+                    enabled: false
+                },
+                credits: {
+                    enabled: false
+                },
+                series: [{
+                    name: '',
+                    marker: {
+                        enabled: false
+                     },
+                    data: []
+                }]
             });
+                          
         },
         update: function (datapoint) {
-            const data = chart.data;
-            if (data.datasets.length > 0) {
-                data.datasets[0].data.push(datapoint);
-                chart.update();
-            }
+            //chart.series[0].addPoint([datapoint.x, datapoint.y], true);
+            chart.series[0].addPoint(datapoint,true,false);
+            //chart.redraw();
         }
     }
 })();
