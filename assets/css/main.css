@@ -839,7 +839,7 @@ b {
   height: 279px;
   bottom: 3px;
   left: 23px;
-  background-image: url(/assets/images/crops/graph_base.svg);
+  background-image: url(../images/crops/graph_base.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
