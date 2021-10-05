@@ -57,7 +57,9 @@ function OpenWord() {
 //Worksheet Func ends
 
 $(document).ready(function () {
+  InitBrowserAttribute();
   showSlides(slideIndex);
+  WaterCoolingChart.init([{"x": 0, "y":0}]);
 });
 
 var procedCount = 1;
@@ -99,16 +101,19 @@ $('.closeProcd').on('mouseout', function () {
   $('.closeProcd').attr('src', 'assets/images/closeUp.png');
 });
 
-$('.procdClick').on('mouseover', function () {
+$('.procdClick, .procopentxt').on('mouseover', function () {
   $('.procdClick').attr('src', 'assets/images/procdHover.gif');
   $('.procdClick').css('cursor', 'pointer');
+  $(".procopentxt").addClass("show")
 });
-$('.procdClick').on('mouseout', function () {
+$('.procdClick, .procopentxt').on('mouseout', function () {
   $('.procdClick').attr('src', 'assets/images/procdClick.png');
+  $(".procopentxt").removeClass("show")
 });
 
-$('.procdClick').on('click', function () {
-  $(this).css('display', 'none');
+$('.procdClick,.procopentxt').on('click', function () {
+  $('.procdClick').css('display', 'none');
+  $(".procopentxt").removeClass("show")
   $('.procdAnim').attr('src', 'assets/images/procedure.gif').css('display', 'block');
   setTimeout(() => {
     $('.mainProcdiv').css('display', 'block');
@@ -134,26 +139,26 @@ $('.closeProcd').on('mouseout', function () {
 
 $('.showObj').on('mouseover', function () {
   $(this).attr('src', 'assets/images/showObj.gif').css('cursor', 'pointer');
-  $('.contentContainer, .tableContainer, .mainstand, .graphTempVsTime, .threshold, .timerDiv').css('opacity', '0.3');
+  $('.contentContainer, .tableContainer, .mainstand, .graphTempVsTime, .threshold, .timerDiv').addClass("opac3")
   if (procedCount == 1) {
     
   }
   if (procedCount == 2 || procedCount == 4) {
-    $(".standContainer .opacburner").show().css('opacity', '1');
+    $(".standContainer .opacburner").show().removeClass("opac3")
   }
   if (procedCount == 3) {
-    $(".standContainer .opactermometer").show().css('opacity', '1');
+    $(".standContainer .opactermometer").show().removeClass("opac3")
   }
   if (procedCount == 6) {
-    $(".standContainer .opactermometer").show().css('opacity', '1');
+    $(".standContainer .opactermometer").show().removeClass("opac3")
   }
 });
 
 $('.showObj').on('mouseout', function () {
   $(this).attr('src', 'assets/images/showObjM.gif');
-  $('.contentContainer, .tableContainer,.mainstand, .graphTempVsTime, .threshold, .timerDiv').css('opacity', '1');
-  $(".standContainer .opacburner").hide().css('opacity', '1');
-  $(".standContainer .opactermometer").hide().css('opacity', '1');
+  $('.contentContainer, .tableContainer,.mainstand, .graphTempVsTime, .threshold, .timerDiv').removeClass("opac3")
+  $(".standContainer .opacburner").hide().removeClass("opac3")
+  $(".standContainer .opactermometer").hide().removeClass("opac3")
 });
 
 var timeSF2 = 20;
@@ -186,7 +191,8 @@ function updateTemperature(temperature) {
 function ObserveHeating() {
   exptTime = progTime * timeSF;
   Temp2 = ((Power * exptTime) / (mass * SpHeat)) + Temp1;
-  Temp2 = Number(Temp2.toFixed(2));
+  //Temp2 = Number(Temp2.toFixed(2));
+  Temp2 = Number(toTrunc(Temp2,2));
   progTime++;
   if (Temp2 > 50) {
     //water_mc.water_anim.gotoAndPlay(460);
@@ -292,7 +298,7 @@ function StartCooling() {
   var coolingConstant = 0.003;
   ClsCalcCoolingObject.initCoolingObj(Temp1, Temp2, coolingConstant);
   
-  WaterCoolingChart.init([{"x": 0, "y":100}]);
+  WaterCoolingChart.init([{"x": 0, "y":0}]);
   intervalID3 = setInterval(ObserveCooling, 1000);
 }
 
@@ -302,11 +308,12 @@ function ObserveCooling() {
   minValue = exptTime2 / 60;
 
   var currentTemp = ClsCalcCoolingObject.getTempAtTime(exptTime2);
-  currentTemp = Number(currentTemp.toFixed(2));
+  currentTemp = Number(toTrunc(currentTemp,2));
+  WaterCoolingChart.update({x:minValue,y:Number(toTrunc(currentTemp,1))})
   if ((minValue % 2) == 0) {
     $("#tableCoolingTemp tbody tr:nth-child(" + kp + ") td:nth-child(1)").text(minValue);
-    $("#tableCoolingTemp tbody tr:nth-child(" + kp + ") td:nth-child(2)").text(currentTemp.toFixed(1));
-    WaterCoolingChart.update({x:minValue,y:Number(currentTemp.toFixed(1))})
+    $("#tableCoolingTemp tbody tr:nth-child(" + kp + ") td:nth-child(2)").text(toTrunc(currentTemp,1).toFixed(1));
+    
     kp++;
   }
   updateTemperature(currentTemp);
@@ -327,6 +334,11 @@ function ObserveCooling() {
   }
 }
 
+
+function toTrunc(value,n){
+  x=(value.toString()+".0").split(".");
+  return parseFloat(x[0]+"."+x[1].substr(0,n));
+}
 
 
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:author="http://www.sothink.com"
+width="18px" height="18px"
+xml:space="preserve">
+<g id="73" transform="matrix(1, 0, 0, 1, 8.8, 8.85)">
+<radialGradient
+id="RadialGradID_70" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0, 0.0144653, 0.0144653, 0, -3.55, -3.45)" spreadMethod ="pad" cx="0" cy="0" r="819.2" fx="0" fy="0" >
+<stop  offset="0"  style="stop-color:#FFFFFF;stop-opacity:1" />
+<stop  offset="0.294118"  style="stop-color:#FFCF00;stop-opacity:1" />
+<stop  offset="1"  style="stop-color:#8E6402;stop-opacity:1" />
+</radialGradient>
+<path style="fill:url(#RadialGradID_70) " d="M6.25,-6.25Q8.85 -3.7 8.85 -0.05Q8.85 3.65 6.25 6.2Q3.7 8.8 0.05 8.8Q-3.65 8.8 -6.2 6.2Q-8.8 3.65 -8.8 -0.05Q-8.8 -3.7 -6.2 -6.25Q-3.65 -8.85 0.05 -8.85Q3.7 -8.85 6.25 -6.25" />
+<path style="fill:#000000;fill-opacity:1" d="M-2.35,4.65L-2.35 -4.7L2.3 -0.05L-2.35 4.65" />
+</g>
+</svg>

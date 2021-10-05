@@ -104,9 +104,9 @@ var WaterCoolingChart = (function () {
             chart = Highcharts.chart('myChart', {
                 chart: {
                     type: 'spline',
-                    width: 400,
-                    height:290
-
+                    width: 410,
+                    height:290,
+                    animation: true
                 },
                 plotOptions: {
                     series: {
@@ -115,23 +115,48 @@ var WaterCoolingChart = (function () {
                 },
                 xAxis: {
                     title: {
-                        text: 'Time (min)'
+                        text: 'Time (min)',
+                        style:{
+                            color:"#7f542a",
+                            fontSize: '14px',
+                            fontWeight: 'bold'
+                        }
                     },
                     min:0,
-                    max:30,
+                    max:31,
                     tickInterval:2,
-                    gridLineWidth: 1
+                    gridLineWidth: 1,
+                    tickLength: 5,
+                    lineWidth: 1,
+                    majorTickPosition:"outside",
+                    minorGridLineWidth: 0,
+                    minorTickInterval: 2,
+                    minorTickLength: 10,
+                    minorTickWidth: 1
                 },
                 title: false,
                 subtitle:false,
                 yAxis: {
                     title: {
-                        text: 'Temperature (°C)'
+                        text: 'Temperature (°C)',
+                        margin: 5,
+                        style:{
+                            color:"#447215",
+                            fontSize: '14px',
+                            fontWeight: 'bold'
+                        }
                     },
                     min:0,
                     max:100,
                     tickInterval:10,
-                    gridLineWidth: 1
+                    gridLineWidth: 1,
+                    tickLength: 5,
+                    lineWidth: 1,
+                    majorTickPosition:"outside",
+                    minorGridLineWidth: 0,
+                    minorTickInterval: 10,
+                    minorTickLength: 10,
+                    minorTickWidth: 1
                 },
                 legend: {
                     enabled: false
@@ -141,6 +166,7 @@ var WaterCoolingChart = (function () {
                 },
                 series: [{
                     name: '',
+                    color:"#0505ff",
                     marker: {
                         enabled: false
                      },
@@ -156,3 +182,49 @@ var WaterCoolingChart = (function () {
         }
     }
 })();
+
+
+function InitBrowserAttribute() {
+		
+    // Get the user-agent string
+    let userAgentString =
+        navigator.userAgent;
+
+    let browserStr = "";
+
+    // Detect Chrome
+    let chromeAgent =
+        userAgentString.indexOf("Chrome") > -1;
+
+    // Detect Internet Explorer
+    let IExplorerAgent =
+        userAgentString.indexOf("MSIE") > -1 ||
+        userAgentString.indexOf("rv:") > -1;
+
+    // Detect Firefox
+    let firefoxAgent =
+        userAgentString.indexOf("Firefox") > -1;
+
+    // Detect Safari
+    let safariAgent =
+        userAgentString.indexOf("Safari") > -1;
+        
+    // Discard Safari since it also matches Chrome
+    if ((chromeAgent) && (safariAgent))
+        safariAgent = false;
+
+    // Detect Opera
+    let operaAgent =
+        userAgentString.indexOf("OP") > -1;
+        
+    // Discard Chrome since it also matches Opera	
+    if ((chromeAgent) && (operaAgent))
+        chromeAgent = false;
+
+    if (safariAgent) browserStr = "safari"
+    else if(chromeAgent) browserStr = "chrome"
+    else if(firefoxAgent) browserStr = "firefox"
+    else if (IExplorerAgent) browserStr = "IE"
+
+    $("body").attr("browser", browserStr);
+}

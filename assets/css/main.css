@@ -10,6 +10,11 @@
 }
 
 @font-face {
+  font-family: 'Trebuchet1';
+  src: local('fonts/trebuc.woff'), url('fonts/trebuc.woff');
+}
+
+@font-face {
   font-family: 'ArialBold';
   src: local('fonts/6_Arial.ttf'), url('fonts/6_Arial.ttf');
 }
@@ -17,6 +22,11 @@
 @font-face {
   font-family: 'TrebuchetBold';
   src: local('fonts/9_Trebuchet MS.ttf'), url('fonts/9_Trebuchet MS.ttf');
+}
+
+@font-face {
+  font-family: 'Digital';
+  src: local('fonts/198_Digital Readout ExpUpright.ttf'), url('fonts/198_Digital Readout ExpUpright.ttf');
 }
 
 html, body {
@@ -60,62 +70,56 @@ html, body {
 
 #logo {
   position: absolute;
-  width: 100px;
-  height: 24px;
-  top: 3px;
+  width: 108px;
+  height: 18px;
+  padding: 5px;
+  top: 6px;
   right: 39px;
+  background: white;
 }
 
 #logoImg {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 91%;
 }
 
 #closeBtn {
   position: absolute;
-  width: 34px;
-  height: 39px;
-  top: 2px;
-  right: 5px;
-  cursor: pointer;
-  background: url(../images/10.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  width: 30px;
+  height: 37px;
+  left: 962px;
   cursor: pointer;
 }
 
-/* #closeBtnImg{
+.closeBtn1 {
   position: absolute;
-  width: 100%;
-  height: 27px;
-  top: 0px;
-  right: 0px;
-  background: url(../images/10.png);
+  top: 28px;
+  left: 1px;
+  color: white;
+  font-size: 10px;
+  font-family: sans-serif;
+  pointer-events: none;
+}
+
+.closeImg {
+  position: absolute;
+  width: 24px;
+  height: 25px;
+  top: 2px;
+  left: 2px;
+  background: url(../images/closeB.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
-#closeBtnText{
-  position: absolute;
-  bottom: -10px;
-  left: 3px;
-  font-family: Arial;
-  font-size: 11px;
-  font-weight: 600;
-  color: #ccc;
-} */
-
-#closeBtn:hover {
-  position: absolute;
-  width: 34px;
-  height: 39px;
-  top: 2px;
-  right: 5px;
-  background: url(../images/11.png);
+#closeBtn:hover .closeImg {
+  background: url(../images/closeA.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  cursor: pointer;
+}
+
+#closeBtn:hover .closeBtn1 {
+  color: red;
 }
 
 #topmenubar2 {
@@ -160,7 +164,7 @@ html, body {
 
 .copyRight {
   position: absolute;
-  bottom: 9px;
+  bottom: 0px;
   font-family: Arial;
   font-size: 12px;
   right: 6px;
@@ -226,7 +230,7 @@ html, body {
   width: 120px;
   height: 69px;
   bottom: 111px;
-  left: 502px;
+  left: 488px;
   background: url(../images/timer.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -235,16 +239,12 @@ html, body {
 
 .clockText {
   position: absolute;
-  text-align: center;
-  top: 10px;
-  font-size: 29px;
-  /* word-spacing: 14px; */
+  top: 14px;
+  font-size: 22px;
   font-family: 'Digital';
-  font-weight: bold;
   letter-spacing: 0.7px;
   color: #FFFF99;
-  left: 13px;
-  width: 94px;
+  left: 22.3px;
 }
 
 .ballText {
@@ -376,6 +376,7 @@ html, body {
   font-family: Arial;
   font-weight: bold;
   color: #000000;
+  line-height: 18px;
 }
 
 .workSheetDiv {
@@ -405,7 +406,7 @@ html, body {
 .workSheetContent {
   position: absolute;
   width: 258px;
-  height: 430px;
+  height: 445px;
   top: 122px;
   left: 5px;
   border: 1px solid black;
@@ -421,6 +422,7 @@ html, body {
   /* font-weight: bold; */
   color: #000033;
   padding-right: 15px;
+  line-height: 18px;
 }
 
 b {
@@ -537,6 +539,28 @@ b {
   right: 0;
 }
 
+.procedureOver {
+  position: absolute;
+  right: 5px;
+  background-image: url(../images/crops/shape280.svg);
+  font-size: 13px;
+  /* width: 80px; */
+  text-align: center;
+  padding-top: 4px;
+  padding-right: 4px;
+}
+
+.procopentxt {
+  display: none;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: 'Trebuchet';
+  color: #333333;
+  cursor: pointer;
+  padding: 2px;
+  padding-bottom: 0px;
+}
+
 .mainProcdiv {
   display: none;
 }
@@ -549,7 +573,7 @@ b {
   left: 4px;
   opacity: 0.5;
   pointer-events: none;
-  background: url(../images/procPrev.png);
+  background: url(../images/crops/shape264.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
@@ -561,7 +585,7 @@ b {
   height: 18px;
   bottom: 4px;
   right: 4px;
-  background: url(../images/procdnext.png);
+  background: url(../images/crops/shape266.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
@@ -569,19 +593,21 @@ b {
 
 .showObj {
   position: absolute;
-  width: 100px;
+  width: 120px;
   height: 21px;
   bottom: 32px;
-  left: 135px;
+  left: 115px;
+  border: 1px solid #FFCF02;
+  border-radius: 15px;
 }
 
 .showObjTxt {
   position: absolute;
-  font-size: 10px;
+  font-size: 12px;
   bottom: 35px;
   right: 12px;
   font-weight: bold;
-  font-family: 'Trebuchet';
+  /*font-family: 'Trebuchet MS';*/
   color: #333333;
   pointer-events: none;
 }
@@ -651,7 +677,7 @@ b {
 
 .tableContainer {
   position: absolute;
-  left: 15px;
+  left: 10px;
   top: 5px;
   display: none;
 }
@@ -678,6 +704,7 @@ b {
 
 .tableContainer table tr td:nth-child(1) {
   background-color: #fef7df;
+  font-weight: bold;
 }
 
 .tableContainer table tr td:nth-child(2) {
@@ -689,7 +716,7 @@ b {
   width: 220px;
   height: 438px;
   bottom: 103px;
-  left: 160px;
+  left: 150px;
 }
 
 .graphic-normal, .graphic-active {
@@ -709,7 +736,7 @@ b {
   position: absolute;
   bottom: 136px;
   left: 22px;
-  height: 96px;
+  height: 70px;
   width: 133px;
 }
 
@@ -721,19 +748,19 @@ b {
   position: absolute;
   bottom: 136px;
   left: 22px;
-  height: 115px;
+  height: 85px;
   width: 133px;
   display: none;
 }
 
 .standContainer .boilingwater img {
   width: 133px;
-  height: 115px;
+  height: 87px;
 }
 
 .termameterredbarwrapper {
   position: absolute;
-  bottom: 168px;
+  bottom: 188px;
   left: 114px;
   width: 2px;
   height: 213px;
@@ -750,19 +777,18 @@ b {
   height: 30%;
 }
 
-.burnerKnob {
+.burnerKnob, .burnerKnobdummy {
   position: absolute;
-  width: 54px;
-  height: 30px;
-  left: 46px;
-  bottom: 28px;
-  /* background-color: red; */
+  width: 71px;
+  height: 119px;
+  left: 51px;
+  bottom: 7px;
   cursor: pointer;
 }
 
 .graphTempVsTime {
   position: absolute;
-  left: 330px;
+  left: 310px;
   top: 70px;
   display: none;
 }
@@ -809,10 +835,31 @@ b {
 
 .myChartBG {
   position: absolute;
-  height: 44px;
-  bottom: 9px;
-  background-image: url(assets/images/crops/graph_base.svg);
+  width: 380px;
+  height: 279px;
+  bottom: 3px;
+  left: 23px;
+  background-image: url(/assets/images/crops/graph_base.svg);
   background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.y-axis-line {
+  position: absolute;
+  bottom: 54px;
+  left: 66px;
+  width: 2px;
+  background: #000;
+  height: 238px;
+}
+
+.x-axis-line {
+  position: absolute;
+  bottom: 54px;
+  left: 66px;
+  height: 2px;
+  width: 345px;
+  background: #000;
 }
 
 .opacburner {
@@ -837,4 +884,49 @@ b {
 
 .opactermometer img {
   height: 275px;
+}
+
+.top-arrow, .down-arrow, .right-arrow {
+  position: absolute;
+  width: 10px;
+}
+
+.top-arrow {
+  left: 62px;
+  top: -8px;
+}
+
+.down-arrow {
+  left: 64px;
+  bottom: -8px;
+}
+
+.right-arrow {
+  right: -4px;
+  top: 230px;
+}
+
+.degTemptxt {
+  position: absolute;
+  right: 4px;
+  top: 10px;
+  background: #ffffff;
+  font-size: 14px;
+}
+
+body[browser='safari'] .myChartBG {
+  left: 13px;
+}
+
+.mainstand{
+  width: 100%;
+  height: 100%;
+}
+
+
+.opac3{
+  opacity: 0.3; /* Standard compliant browsers */
+   -moz-opacity: 0.3; /* Firefox and Mozilla browsers */
+   -webkit-opacity: 0.3; /* WebKit browser e.g. Safari */
+   filter: alpha(opacity=30); /* For IE8 and earlier */
 }

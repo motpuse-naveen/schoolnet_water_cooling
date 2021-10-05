@@ -28,11 +28,11 @@
       </script>
       <div id="topmenubar">
          <div id="logo">
-            <img id="logoImg" src="assets/images/1349.png">
+            <img id="logoImg" src="assets/images/343.png">
          </div>
          <div id="closeBtn">
-            <!-- <div id="closeBtnImg"></div>
-            <p id="closeBtnText">Close</p> -->
+            <div class="closeBtn1">Close</div>
+            <div class="closeImg"></div>
          </div>
 
       </div>
@@ -131,15 +131,17 @@
                </div>
                <div class="standContainer">
                   <div class="mainstand">
-                  <div class="water"></div>
-                  <div class="boilingwater"><img src="assets/images/crops/bubble_ani.gif"></div>
-                  <div class="termameterredbarwrapper">
-                     <div class="termameterredbar"></div>
-                  </div>
-                  <div class="graphic-normal"><img src="assets/images/crops/graphic_normal.png"></div>
-                  <div class="graphic-active"><img src="assets/images/crops/graphic_active.png"></div>
-                  <div class="burnerKnob off"></div>
-                  <div class="txtTemp">30</div>
+                     <div class="water"></div>
+                     <div class="boilingwater"><img src="assets/images/crops/bubble_ani.gif"></div>
+                     <div class="termameterredbarwrapper">
+                        <div class="termameterredbar"></div>
+                     </div>
+                     <div class="graphic-normal"><img src="assets/images/crops/graphic_normal.png"></div>
+                     <div class="graphic-active"><img src="assets/images/crops/graphic_active.png"></div>
+                     <div class="burnerKnobdummy off"></div>
+                     <div class="burnerKnob off"></div>
+                     <div class="txtTemp">30</div>
+                     <div class="degTemptxt">&deg;C</div>
                   </div>
                   <div class="opacburner">
                      <img src="assets/images/crops/burner_normal.png">
@@ -151,10 +153,12 @@
                   <div></div>
                </div>
                <div class="graphTempVsTime">
-                  <div class="gradientyAxis"></div>
-                  <div class="gradientxAxis"></div>
                   <div class="myChartBG"></div>
                   <div id="myChart"></div>
+                  <div class="y-axis-line"></div>
+                  <div class="x-axis-line"></div>
+                  <img class="top-arrow" src="assets/images/crops/top-arrow.png">
+                  <img class="right-arrow" src="assets/images/crops/right-arrow.png">
                </div>
                <div class="threshold">
                   <p class="thresholdText">
@@ -194,7 +198,7 @@
                         <p>Beaker filled with Water</p>
                         <p>Bunsen Burner with tripod and wire gauze</p>
                         <p>Thermometer</p>
-                        <p><b>Procedure:</b></p>
+                        <p><b>Procedure</b></p>
                         <p>Place the beaker partially filled with water on a tripod stand with a Bunsen burner below it.
                         </p>
                         <p>Start heating the water with the Bunsen burner.</p>
@@ -209,17 +213,23 @@
                </div>
                <div class="procedureDiv">
                   <img class="procdClick" src="assets/images/procdClick.png">
+                  <div class="procedureOver">
+                     <div>Procedure</div>
+                     <div class="procopentxt">OPEN</div>
+                  </div>
                   <img class="procdAnim" src="assets/images/procedure.gif" />
+                  
                   <div class="mainProcdiv">
                      <span class="procdNum">1)</span>
                      <div class="prevProcd"></div>
                      <div class="nextProcd"></div>
                      <img class="showObj" src="assets/images/showObjM.gif" />
+                    
                      <span class="showObjTxt">Show Object</span>
                      <img class="closeProcd closeProcdBefore" src="assets/images/closeUp.png" />
                      <span class="closeProcdTxt">CLOSE</span>
                      <div class="procedSteps procedSteps1">
-                        <p>Specify a value between 20 and 240 as the time-scale between the program time and the actual
+                        <p>Specify a value between 20 and 240 as the timescale between the program time and the actual
                            experiment time.</p>
                      </div>
                      <div class="procedSteps procedSteps2">
