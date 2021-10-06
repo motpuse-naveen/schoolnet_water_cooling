@@ -837,15 +837,15 @@ b {
 .myChartBG {
   position: absolute;
     width: 386px;
-    bottom: 4px;
-    left: 22px;
+    bottom: 1px;
+    left: 20px;
     
 }
 .myChartAxisBG{
   position: absolute;
     width: 354px;
     bottom: 51px;
-    left: 61px;
+    left: 60px;
 }
 
 .y-axis-line {
@@ -949,9 +949,9 @@ body[os='windows'] .myChartBG {
   bottom: 6px;
 }
 body[os='windows'] .myChartAxisBG {
-  width: 350;
-  left: 66px;
-  bottom: 57px;
+  width: 350px;
+  left: 67px;
+  bottom: 58px;
 }
 
 body[os='windows'] .y-axis-line {
