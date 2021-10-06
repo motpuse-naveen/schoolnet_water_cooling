@@ -789,7 +789,7 @@ b {
 
 .graphTempVsTime {
   position: absolute;
-  left: 310px;
+  left: 303px;
   top: 70px;
   display: none;
 }
@@ -836,31 +836,34 @@ b {
 
 .myChartBG {
   position: absolute;
-    width: 380px;
-    height: 290px;
-    bottom: 10px;
-    left: 23px;
-    background-image: url(../images/crops/graph_base.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 386px;
+    bottom: 4px;
+    left: 22px;
+    
+}
+.myChartAxisBG{
+  position: absolute;
+    width: 354px;
+    bottom: 51px;
+    left: 61px;
 }
 
 .y-axis-line {
   position: absolute;
-    top: -2px;
-    left: 66px;
-    width: 2px;
-    background: #000;
-    height: 20px;
+  top: -2px;
+  left: 66px;
+  width: 2px;
+  background: #000;
+  height: 20px;
 }
 
 .x-axis-line {
   position: absolute;
-    bottom: 56px;
-    right: 0px;
-    height: 2px;
-    width: 20px;
-    background: #000;
+  bottom: 56px;
+  right: 0px;
+  height: 2px;
+  width: 20px;
+  background: #000;
 }
 
 .opacburner {
@@ -915,26 +918,54 @@ b {
   font-size: 14px;
 }
 
-body[browser='safari'] .myChartBG {
-  
-}
+body[browser='safari'] .myChartBG {}
 
-.mainstand{
+.mainstand {
   width: 100%;
   height: 100%;
 }
 
-
-.opac3{
-  opacity: 0.3; /* Standard compliant browsers */
-   -moz-opacity: 0.3; /* Firefox and Mozilla browsers */
-   -webkit-opacity: 0.3; /* WebKit browser e.g. Safari */
-   filter: alpha(opacity=30); /* For IE8 and earlier */
+.opac3 {
+  opacity: 0.3;
+  /* Standard compliant browsers */
+  -moz-opacity: 0.3;
+  /* Firefox and Mozilla browsers */
+  -webkit-opacity: 0.3;
+  /* WebKit browser e.g. Safari */
+  filter: alpha(opacity=30);
+  /* For IE8 and earlier */
 }
 
-.headerP{
+.headerP {
   margin-bottom: 0;
 }
-.firstPmb0{
+
+.firstPmb0 {
   margin-top: 0;
+}
+
+body[os='windows'] .myChartBG {
+  left: 26px;
+  bottom: 6px;
+}
+body[os='windows'] .myChartAxisBG {
+  width: 350;
+  left: 66px;
+  bottom: 57px;
+}
+
+body[os='windows'] .y-axis-line {
+  left: 72px;
+}
+
+body[os='windows'] .top-arrow {
+  left: 68px;
+}
+
+body[os='windows'] .x-axis-line {
+  bottom: 63.5px;
+}
+
+body[os='windows'] .right-arrow {
+  top: 221px;
 }
