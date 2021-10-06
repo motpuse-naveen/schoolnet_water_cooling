@@ -195,9 +195,12 @@ function ObserveHeating() {
   //Temp2 = Number(Temp2.toFixed(2));
   Temp2 = Number(toTrunc(Temp2, 2));
   progTime++;
-  if (Temp2 > 50) {
+  if (Temp2 > 30) {
     //water_mc.water_anim.gotoAndPlay(460);
     $(".boilingwater").show();
+    if($(".boilingwater").find("img").length<=0){
+      $(".boilingwater").append($('<img src="assets/images/crops/bbl-v2.gif">'))
+    }
   }
   if (Temp2 > 100) {
     Temp2 = 100;
@@ -226,6 +229,7 @@ $('.resetDiv').on('click', function () {
   $(".graphic-active").hide();
   $(".burnerKnob").show();
   $(".boilingwater").hide();
+  $(".boilingwater").empty();
   timeSF2 = 20;
   expScale = 30;
   timeSF = expScale;
@@ -256,6 +260,7 @@ function bur_mc_on() {
   clearInterval(intervalID);
   $(".threshold").hide();
   $(".boilingwater").hide();
+  $(".boilingwater").empty();
 
   timeSF = timeScaleFactor();
   if (!burnerOn) {
@@ -273,6 +278,7 @@ function bur_mc_off() {
   $(".threshold .heatedToTempVal").text(Temp2);
   $(".burnerKnob").hide();
   $(".boilingwater").hide();
+  $(".boilingwater").empty();
 }
 function bur_mc_auto_off() {
   bur_mc_off();

@@ -126,7 +126,7 @@ var WaterCoolingChart = (function () {
                         rotation: 0
                     },
                     min:0,
-                    max:30,
+                    max:30.5,
                     tickInterval:2,
                     gridLineWidth: 1,
                     tickLength: 5,
