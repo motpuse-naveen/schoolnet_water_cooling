@@ -122,12 +122,16 @@ var WaterCoolingChart = (function () {
                             fontWeight: 'bold'
                         }
                     },
+                    labels: {
+                        rotation: 0
+                    },
                     min:0,
                     max:31,
                     tickInterval:2,
                     gridLineWidth: 1,
                     tickLength: 5,
-                    lineWidth: 1,
+                    lineWidth: 2,
+                    lineColor: '#000000',
                     majorTickPosition:"outside",
                     minorGridLineWidth: 0,
                     minorTickInterval: 2,
@@ -147,15 +151,16 @@ var WaterCoolingChart = (function () {
                         }
                     },
                     min:0,
-                    max:100,
-                    tickInterval:10,
+                    max:105,
+                    tickInterval:5,
                     gridLineWidth: 1,
                     tickLength: 5,
-                    lineWidth: 1,
+                    lineWidth: 2,
+                    lineColor: '#000000',
                     majorTickPosition:"outside",
                     minorGridLineWidth: 0,
                     minorTickInterval: 10,
-                    minorTickLength: 10,
+                    minorTickLength: 5,
                     minorTickWidth: 1
                 },
                 legend: {
@@ -227,4 +232,22 @@ function InitBrowserAttribute() {
     else if (IExplorerAgent) browserStr = "IE"
 
     $("body").attr("browser", browserStr);
+}
+
+
+function InitOSAttribute(){
+    var OSName = "Unknown";
+    var OSGroup = "Unknown";
+    if (window.navigator.userAgent.indexOf("Windows NT 10.0")!= -1) {OSName="Windows10";OSGroup="Windows"};
+    if (window.navigator.userAgent.indexOf("Windows NT 6.3") != -1) {OSName="Windows8_1";OSGroup="Windows"};
+    if (window.navigator.userAgent.indexOf("Windows NT 6.2") != -1) {OSName="Windows8";OSGroup="Windows"};
+    if (window.navigator.userAgent.indexOf("Windows NT 6.1") != -1) {OSName="Windows7";OSGroup="Windows"};
+    if (window.navigator.userAgent.indexOf("Windows NT 6.0") != -1) {OSName="WindowsVista";OSGroup="Windows"};
+    if (window.navigator.userAgent.indexOf("Windows NT 5.1") != -1) {OSName="WindowsXP";OSGroup="Windows"};
+    if (window.navigator.userAgent.indexOf("Windows NT 5.0") != -1) {OSName="Windows2000";OSGroup="Windows"};
+    if (window.navigator.userAgent.indexOf("Mac")            != -1) {OSName="MaciOS";OSGroup="MaciOS"};
+    if (window.navigator.userAgent.indexOf("X11")            != -1) {OSName="UNIX";OSGroup="UNIX"};
+    if (window.navigator.userAgent.indexOf("Linux")          != -1) {OSName="Linux";OSGroup="Linux"};
+
+    $("body").attr("os", OSName);
 }

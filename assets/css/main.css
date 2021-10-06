@@ -610,6 +610,7 @@ b {
   /*font-family: 'Trebuchet MS';*/
   color: #333333;
   pointer-events: none;
+  padding-bottom: 1px;
 }
 
 .closeProcdAfter {
@@ -835,31 +836,31 @@ b {
 
 .myChartBG {
   position: absolute;
-  width: 380px;
-  height: 279px;
-  bottom: 3px;
-  left: 23px;
-  background-image: url(../images/crops/graph_base.svg);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+    width: 380px;
+    height: 290px;
+    bottom: 10px;
+    left: 23px;
+    background-image: url(../images/crops/graph_base.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .y-axis-line {
   position: absolute;
-  bottom: 54px;
-  left: 66px;
-  width: 2px;
-  background: #000;
-  height: 238px;
+    top: -2px;
+    left: 66px;
+    width: 2px;
+    background: #000;
+    height: 20px;
 }
 
 .x-axis-line {
   position: absolute;
-  bottom: 54px;
-  left: 66px;
-  height: 2px;
-  width: 345px;
-  background: #000;
+    bottom: 56px;
+    right: 0px;
+    height: 2px;
+    width: 20px;
+    background: #000;
 }
 
 .opacburner {
@@ -903,7 +904,7 @@ b {
 
 .right-arrow {
   right: -4px;
-  top: 230px;
+  top: 228px;
 }
 
 .degTemptxt {
@@ -915,7 +916,7 @@ b {
 }
 
 body[browser='safari'] .myChartBG {
-  left: 13px;
+  
 }
 
 .mainstand{
@@ -929,4 +930,11 @@ body[browser='safari'] .myChartBG {
    -moz-opacity: 0.3; /* Firefox and Mozilla browsers */
    -webkit-opacity: 0.3; /* WebKit browser e.g. Safari */
    filter: alpha(opacity=30); /* For IE8 and earlier */
+}
+
+.headerP{
+  margin-bottom: 0;
+}
+.firstPmb0{
+  margin-top: 0;
 }
