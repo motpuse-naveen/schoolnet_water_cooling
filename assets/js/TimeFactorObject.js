@@ -136,7 +136,8 @@ var WaterCoolingChart = (function () {
                     minorGridLineWidth: 0,
                     minorTickInterval: 2,
                     minorTickLength: 10,
-                    minorTickWidth: 1
+                    minorTickWidth: 1,
+                    gridLineColor: '#ACBCC4'
                 },
                 title: false,
                 subtitle:false,
@@ -162,7 +163,8 @@ var WaterCoolingChart = (function () {
                     minorTickInterval: 10,
                     minorTickLength: 10,
                     majorTickLength: 10,
-                    minorTickWidth: 1
+                    minorTickWidth: 1,
+                    gridLineColor: '#ACBCC4'
                 },
                 legend: {
                     enabled: false

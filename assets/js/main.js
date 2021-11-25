@@ -78,12 +78,12 @@ $('.prevProcd').on('click', function () {
   $('.procdNum').text(procedCount + ")");
 });
 $('.nextProcd').on('click', function () {
-  if (procedCount < 6) {
+  if (procedCount < 5) {
     procedCount++;
     $('.nextProcd').css({ 'opacity': '1', 'pointer-events': 'all' });
     $('.prevProcd').css({ 'opacity': '1', 'pointer-events': 'all' });
   } else {
-    procedCount = 7;
+    procedCount = 6;
     $('.nextProcd').css({ 'opacity': '0.5', 'pointer-events': 'none' });
   }
   $('.procedSteps').css('display', 'none');
@@ -140,26 +140,37 @@ $('.closeProcd').on('mouseout', function () {
 
 $('.showObj').on('mouseover', function () {
   $(this).attr('src', 'assets/images/showObj.gif').css('cursor', 'pointer');
-  $('.contentContainer, .tableContainer, .mainstand, .graphTempVsTime, .threshold, .timerDiv').addClass("opac3")
-  if (procedCount == 1) {
+  $('.contentContainer, .tableContainer, .mainstand, .graphTempVsTime, .threshold, .timerDiv, .thermeterGroup, .standContainer .opactermometer').addClass("opac3")
 
-  }
-  if (procedCount == 2 || procedCount == 4) {
+  if (procedCount == 1 || procedCount == 3) {
     $(".standContainer .opacburner").show().removeClass("opac3")
   }
-  if (procedCount == 3) {
-    $(".standContainer .opactermometer").show().removeClass("opac3")
+  if (procedCount == 2) {
+    $(".standContainer .opactermometer").removeClass("opac3")
+    $(".standContainer .thermeterGroup").removeClass("opac3")
+  }
+  if (procedCount == 4) {
+    $(".threshold").removeClass("opac3")
+    $(".threshold .thresholdText").addClass("opac3")
+  }
+  if (procedCount == 5) {
+    $(".standContainer .opactermometer").removeClass("opac3")
+    $(".standContainer .thermeterGroup").removeClass("opac3")
+    $(".mainstand").removeClass("opac3");
+    $(".burner-base-opac").show();
   }
   if (procedCount == 6) {
-    $(".standContainer .opactermometer").show().removeClass("opac3")
+    $(".contentContainer").removeClass("opac3")
   }
 });
 
 $('.showObj').on('mouseout', function () {
   $(this).attr('src', 'assets/images/showObjM.gif');
-  $('.contentContainer, .tableContainer,.mainstand, .graphTempVsTime, .threshold, .timerDiv').removeClass("opac3")
+  $('.contentContainer, .tableContainer,.mainstand, .graphTempVsTime, .threshold, .timerDiv, .thermeterGroup').removeClass("opac3")
   $(".standContainer .opacburner").hide().removeClass("opac3")
-  $(".standContainer .opactermometer").hide().removeClass("opac3")
+  $(".standContainer .opactermometer").removeClass("opac3")
+  $(".threshold .thresholdText").removeClass("opac3")
+  $(".burner-base-opac").hide();
 });
 
 var timeSF2 = 20;
@@ -198,7 +209,7 @@ function ObserveHeating() {
   if (Temp2 > 30) {
     //water_mc.water_anim.gotoAndPlay(460);
     $(".boilingwater").show();
-    if($(".boilingwater").find("img").length<=0){
+    if ($(".boilingwater").find("img").length <= 0) {
       $(".boilingwater").append($('<img src="assets/images/crops/bbl-v2.gif">'))
     }
   }
@@ -209,8 +220,10 @@ function ObserveHeating() {
   updateTemperature(Temp2)
 }
 
-$(".burnerKnob").on('click', function () {
-  if ($(this).hasClass("off")) {
+$(".burnerKnob .layer1, .burnerKnob .layer2, .burnerKnob .layer3").on('click', function () {
+  //debugger;
+  
+  if ($(this).closest(".burnerKnob").hasClass("off")) {
     bur_mc_on()
   }
   else {
@@ -277,8 +290,29 @@ function bur_mc_off() {
   $(".threshold").show();
   $(".threshold .heatedToTempVal").text(Temp2);
   $(".burnerKnob").hide();
-  $(".boilingwater").hide();
+  //$(".boilingwater").hide();
   $(".boilingwater").empty();
+  if(Temp2>=30 && Temp2<40){
+    $(".boilingwater").append($('<img src="assets/images/crops/frame_30-40.gif">'))
+  }
+  if(Temp2>=40 && Temp2<50){
+    $(".boilingwater").append($('<img src="assets/images/crops/frame_40-50.gif">'))
+  }
+  if(Temp2>=50 && Temp2<60){
+    $(".boilingwater").append($('<img src="assets/images/crops/frame_50-60.gif">'))
+  }
+  if(Temp2>=60 && Temp2<70){
+    $(".boilingwater").append($('<img src="assets/images/crops/frame_60-70.gif">'))
+  }
+  if(Temp2>=70 && Temp2<80){
+    $(".boilingwater").append($('<img src="assets/images/crops/frame_70-80.gif">'))
+  }
+  if(Temp2>=80 && Temp2<90){
+    $(".boilingwater").append($('<img src="assets/images/crops/frame_80-90.gif">'))
+  }
+  if(Temp2>=90){
+    $(".boilingwater").append($('<img src="assets/images/crops/frame_90-100.gif">'))
+  }
 }
 function bur_mc_auto_off() {
   bur_mc_off();
@@ -327,7 +361,29 @@ function ObserveCooling() {
     }
     kp++;
   }
+  
   updateTemperature(currentTemp);
+  if(currentTemp<100 && currentTemp>=90){
+    $(".boilingwater img").attr("src","assets/images/crops/frame_90-100.gif");
+  }
+  if(currentTemp<90 && currentTemp>=80){
+    $(".boilingwater img").attr("src","assets/images/crops/frame_80-90.gif");
+  }
+  if(currentTemp<80 && currentTemp>=70){
+    $(".boilingwater img").attr("src","assets/images/crops/frame_70-80.gif");
+  }
+  if(currentTemp<70 && currentTemp>=60){
+    $(".boilingwater img").attr("src","assets/images/crops/frame_60-70.gif");
+  }
+  if(currentTemp<60 && currentTemp>=50){
+    $(".boilingwater img").attr("src","assets/images/crops/frame_50-60.gif");
+  }
+  if(currentTemp<50 && currentTemp>=40){
+    $(".boilingwater img").attr("src","assets/images/crops/frame_40-50.gif");
+  }
+  if(currentTemp<40 && currentTemp>=30){
+    $(".boilingwater").empty();
+  }
   //
   var exptTime2milliseconds = exptTime2 * 1000;
   $(".timerDiv .clockText").text(convertMilliseconds(exptTime2milliseconds, "mm:ss").clock);
