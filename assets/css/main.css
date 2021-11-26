@@ -783,7 +783,7 @@ b {
   background-color: #F91E50;
   opacity: 0.6;
   bottom: 0;
-  left: 0;
+  left: 1px;
   width: 2px;
   height: 30%;
 }
@@ -797,41 +797,68 @@ b {
   position: absolute;
   width: 71px;
   height: 119px;
-  left: 51px;
-  bottom: 7px;
-  
+  left: 45px;
+  bottom: -4px;
 }
-.burnerKnob .layer1{
+#burnerKnobsvg #burnerpath{
+  cursor: pointer;
+}
+.termameterno{
   position: absolute;
   width: 12px;
-  height: 50px;
-  left: 31px;
-  top: 14px;
-  cursor: pointer;
-  /*background: red;
-  opacity: 0.7;*/
+  height: 248px;
+  top:0px;
+  left: 1px;
+  /*background-color: #cee685;*/
 }
-.burnerKnob .layer2{
+.termameterno span{
   position: absolute;
-    width: 52px;
-    height: 36px;
-    right: 24px;
-    top: 63px;
-    cursor: pointer;
-    /*
-    background: green;
-    opacity: 0.7;*/
+  font-size: 5px;
+  font-weight: bold;
 }
-.burnerKnob .layer3{
-  position: absolute;
-    width: 54px;
-    height: 19px;
-    right: 6px;
-    top: 99px;
-    cursor: pointer;
-    /*
-    background: yellow;
-    opacity: 0.6;*/
+.termameterno span.n100{
+    top: 17px;
+    left: 2px;
+}
+.termameterno span.n90{
+    top: 38px;
+    left: 3px;
+}
+.termameterno span.n80{
+  top: 59px;
+  left: 3px;
+}
+.termameterno span.n70{
+  top: 80px;
+  left: 3px;
+}
+.termameterno span.n60{
+  top: 101px;
+  left: 3px;
+}
+.termameterno span.n50{
+  top: 122px;
+  left: 3px;
+}
+.termameterno span.n40{
+  top: 143px;
+  left: 3px;
+}
+.termameterno span.n30{
+  top: 165px;
+  left: 3px;
+}
+.termameterno span.n20{
+  top: 186px;
+  left: 3px;
+}
+.termameterno span.n10{
+  top: 206px;
+  left: 3px;
+}
+.termameterno span.n00{
+  top: 227px;
+  left: 3px;
 }
 
 .graphTempVsTime {

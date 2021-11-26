@@ -126,7 +126,7 @@ var WaterCoolingChart = (function () {
                         rotation: 0
                     },
                     min:0,
-                    max:30.5,
+                    max:30,
                     tickInterval:2,
                     gridLineWidth: 1,
                     tickLength: 5,
@@ -181,7 +181,9 @@ var WaterCoolingChart = (function () {
                     data: []
                 }]
             });
-                          
+            
+            var lastlabelTxt = $(".highcharts-axis-labels.highcharts-xaxis-labels text:last").attr("x")
+            $(".highcharts-axis-labels.highcharts-xaxis-labels text:last").attr("x",Number(lastlabelTxt) + 4)
         },
         update: function (datapoint) {
             //chart.series[0].addPoint([datapoint.x, datapoint.y], true);

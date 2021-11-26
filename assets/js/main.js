@@ -220,9 +220,7 @@ function ObserveHeating() {
   updateTemperature(Temp2)
 }
 
-$(".burnerKnob .layer1, .burnerKnob .layer2, .burnerKnob .layer3").on('click', function () {
-  //debugger;
-  
+$("#burnerKnobsvg #burnerpath").on('click', function () {
   if ($(this).closest(".burnerKnob").hasClass("off")) {
     bur_mc_on()
   }
