@@ -152,6 +152,7 @@ $('.showObj').on('mouseover', function () {
   if (procedCount == 4) {
     $(".threshold").removeClass("opac3")
     $(".threshold .thresholdText").addClass("opac3")
+    $(".threshold").addClass("vissobj");
   }
   if (procedCount == 5) {
     $(".standContainer .opactermometer").removeClass("opac3")
@@ -161,6 +162,7 @@ $('.showObj').on('mouseover', function () {
   }
   if (procedCount == 6) {
     $(".contentContainer").removeClass("opac3")
+    $(".resetDiv").addClass("vissobj")
   }
 });
 
@@ -171,6 +173,7 @@ $('.showObj').on('mouseout', function () {
   $(".standContainer .opactermometer").removeClass("opac3")
   $(".threshold .thresholdText").removeClass("opac3")
   $(".burner-base-opac").hide();
+  $(".vissobj").removeClass("vissobj")
 });
 
 var timeSF2 = 20;

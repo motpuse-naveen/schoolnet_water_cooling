@@ -1057,3 +1057,7 @@ body[os='windows'] .x-axis-line {
 body[os='windows'] .right-arrow {
   top: 221px;
 }
+
+.vissobj{
+  display: block;
+}
